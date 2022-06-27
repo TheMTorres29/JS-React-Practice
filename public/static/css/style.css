@@ -1,0 +1,97 @@
+body {
+    background-color: bisque;
+}
+
+.title {
+    font-weight: 650;
+    padding: .5%;
+    text-decoration: underline;
+}
+
+.container-1 , .container-2 {
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 15px auto;
+    padding: 5px;
+    width: 75%;
+}
+
+.container-1 h2 {
+    padding: 7px;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+}
+
+.flex-box-container-1, .flex-box-container-2 {
+    display: flex;
+    border: 2px solid black;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-box-container-1 div {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.flex-box-container-1 img {
+    max-width: 100%;
+}
+
+.img-container div {
+    flex: 1;
+}
+
+.flex-box-container-1 input {
+    max-width: 100px;
+    width: 100%;
+}
+
+.flex-box-container-1 label {
+    width: auto;
+    font-weight: 700;
+    padding: 5px;
+}
+
+#invalid-warning {
+    color: red;
+    font-weight: 400;
+}
+
+#stringOfNums {
+    max-width: 200px;
+    width: 100%;
+}
+
+.container-2 h2 {
+    padding: 7px;
+    background-color: darkorange;
+    border-radius: 10px;
+    color: white;
+}
+
+#cat-btn-box {
+    align-items: center;
+}
+
+#cat-clear-btn {
+    max-width: 20%;
+    min-width: 10px;
+}
+
+.container-2 button {
+    margin: 10px;
+}
+
+.flex-box-container-2 img {
+    justify-content: space-around;
+    box-shadow: 5px 10px 30px black;
+    margin: 10px;
+    max-width: 12%;
+    min-width: 120px;
+    border-radius: 5px;
+}
