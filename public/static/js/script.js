@@ -115,4 +115,75 @@ function clearCats() {
     div.innerHTML = "";
 }
 
-// Challenge 2.1 
+// Challenge 2.1 : ~
+
+
+// Challenge 3: Basic Type Advantage
+function typeAdvantageGame(yourChoice) {
+    var playerChoice = yourChoice.id;
+    var cpuChoice = randomTypeChoice(randomTypeInt());
+
+    results = decideWinner(playerChoice, cpuChoice);
+    finalmessage = typeAdvantageMessage(results);
+
+    typeAdvantageFrontend(playerChoice, cpuChoice, finalmessage);
+}
+
+function decideWinner(playerChoice, cpuChoice) {
+    var typeAdvantageDatabase = {
+        'grass': {'grass': 0.5, 'water': 1, 'fire': 0},
+        'water': {'grass': 0, 'water': 0.5, 'fire': 1},
+        'fire': {'grass': 1, 'water': 0, 'fire': 0.5}
+    }
+
+    var playerScore = typeAdvantageDatabase[playerChoice][cpuChoice];
+    var cpuScore = typeAdvantageDatabase[cpuChoice][playerChoice];
+
+    return [playerScore, cpuScore];
+}
+
+function typeAdvantageMessage([playerScore, cpuScore]) {
+    if(playerScore === 0) {
+        return {'message': 'You lost!', 'color': 'red'}
+    } else if (playerScore === 0.5){
+        return {'message': 'You tied!', 'color': 'blue'}
+    } else {
+        return {'message': 'You won! :D', 'color': 'green'}
+    }
+}
+
+function typeAdvantageFrontend(playerChoice, cpuChoice, finalmessage) {
+    var imagesDatabase = {
+        'grass': document.getElementById('grass').src,
+        'water': document.getElementById('water').src,
+        'fire': document.getElementById('fire').src
+    }
+
+    // Clear the container for new UI
+    var typeContainer = document.getElementById('typeAdvantage-container');
+    typeContainer.innerHTML = '';
+
+    // Create new divs
+    var playerDiv = document.createElement('div');
+    var cpuDiv = document.createElement('div');
+    var messageDiv = document.createElement('div');
+
+    // Fill new divs
+    playerDiv.innerHTML = "<img src='" + imagesDatabase[playerChoice] + "'>";
+    cpuDiv.innerHTML = "<img src='" + imagesDatabase[cpuChoice] + "'>";
+    messageDiv.innerHTML = "<h4 onclick='location.reload()' style='cursor:pointer; color: " + finalmessage['color'] + "; '>" + finalmessage['message'] + "</h4>";
+
+    // Fill container with results UI
+    document.getElementById('typeAdvantage-container').appendChild(playerDiv);
+    document.getElementById('typeAdvantage-container').appendChild(messageDiv);
+    document.getElementById('typeAdvantage-container').appendChild(cpuDiv);
+
+}
+
+function randomTypeInt() {
+    return Math.floor(Math.random() * 3); 
+}
+
+function randomTypeChoice(number) {
+    return ['grass', 'water', 'fire'][number];
+}
