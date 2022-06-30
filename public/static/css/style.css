@@ -32,6 +32,11 @@ body {
     justify-content: space-around;
 }
 
+.challenge-desc {
+    width: 100%;
+    text-align: center;
+}
+
 .flex-box-container-1 div {
     display: flex;
     padding: 10px;
