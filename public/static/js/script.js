@@ -115,8 +115,31 @@ function clearCats() {
     div.innerHTML = "";
 }
 
-// Challenge 2.1 : ~
+// Challenge 2.1 : Multiplication Table
+function createMultTable() {
+    let selectedNum = document.getElementById("multTableSelection").value;
+    
+    if(selectedNum != ''){
+        clearMultTable();
+        printTable(selectedNum);
+    }
+}
 
+function printTable(selectedNum) {
+    for(var i = 0; i < 13; i++){
+        var row = selectedNum + " * " + i + " = " + selectedNum * i;
+        let multTableRow = document.createTextNode(row);
+
+        var newDiv = document.createElement('div');
+        newDiv.setAttribute('id', 'multTableRow');
+        newDiv.appendChild(multTableRow);
+        document.getElementById('flex-box-result-2-2').appendChild(newDiv);
+    }
+}
+
+function clearMultTable() {
+    document.getElementById('flex-box-result-2-2').innerHTML = '';
+}
 
 // Challenge 3: Basic Type Advantage
 function typeAdvantageGame(yourChoice) {
@@ -187,3 +210,4 @@ function randomTypeInt() {
 function randomTypeChoice(number) {
     return ['grass', 'water', 'fire'][number];
 }
+

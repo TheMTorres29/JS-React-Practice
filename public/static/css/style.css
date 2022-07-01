@@ -4,8 +4,12 @@ body {
 
 .title {
     font-weight: 650;
-    padding: .5%;
+    margin: 2%;
     text-decoration: underline;
+}
+
+.myTag {
+    margin: 2%;
 }
 
 .container-1 , .container-2, .container-3 {
@@ -118,4 +122,31 @@ body {
 #typesymbol img:hover {
     -webkit-filter: drop-shadow( 0px 10px 35px blue);
     filter: drop-shadow( 0px 10px 35px blue);
+}
+
+#multTableRow {
+    padding: 1%;
+    margin: 2%;
+    background-color: white;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 200%;
+    max-width: 100%;
+    min-width: 12px;
+}
+
+#flex-box-result-2-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#multTableSelection {
+    max-width: 100%;
+    width: 180px;
+}
+
+#selectedNumLabel {
+    font-weight: 500;
+    font-size: 2rem;
 }
