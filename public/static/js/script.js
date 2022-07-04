@@ -167,9 +167,9 @@ function decideWinner(playerChoice, cpuChoice) {
 
 function typeAdvantageMessage([playerScore, cpuScore]) {
     if(playerScore === 0) {
-        return {'message': 'You lost!', 'color': 'red'}
+        return {'message': 'You lost! :(', 'color': 'red'}
     } else if (playerScore === 0.5){
-        return {'message': 'You tied!', 'color': 'blue'}
+        return {'message': 'You tied! :)', 'color': 'blue'}
     } else {
         return {'message': 'You won! :D', 'color': 'green'}
     }
